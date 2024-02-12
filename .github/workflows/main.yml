@@ -1,0 +1,25 @@
+name: Loki Task
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build and start containers for a services
+      run: docker compose up -d
+    - name: Test containers functionality
+      uses: cypress-io/github-action@v5
+      env:
+        CYPRESS_BASE_URL: http://localhost:8080
+        CYPRESS_GRAFANA_URL: http://localhost:9090
+      with:
+        working-directory: ./.github/tests

@@ -1,0 +1,36 @@
+# Logs
+logs/
+*.log
+npm.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Koa build output
+dist/
+
+# Koa dependency directory
+node_modules/
+
+# K environment variables
+.env
+
+# Optional ESLint cache
+.eslintcache/
+
+# Editor settings
+.vscode/
+
+# macOS specific files
+.DS_Store
+
+# Windows cache files
+Thumbs.db
+
+# Compiled binary files
+*.exe
+*.dll
+
+# Package files
+*.tgz
